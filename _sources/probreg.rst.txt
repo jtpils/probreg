@@ -1,0 +1,110 @@
+probreg package
+===============
+
+Submodules
+----------
+
+probreg.callbacks module
+------------------------
+
+.. automodule:: probreg.callbacks
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+probreg.cost\_functions module
+------------------------------
+
+.. automodule:: probreg.cost_functions
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+probreg.cpd module
+------------------
+
+.. automodule:: probreg.cpd
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+probreg.features module
+-----------------------
+
+.. automodule:: probreg.features
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+probreg.filterreg module
+------------------------
+
+.. automodule:: probreg.filterreg
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+probreg.gauss\_transform module
+-------------------------------
+
+.. automodule:: probreg.gauss_transform
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+probreg.gaussian\_filtering module
+----------------------------------
+
+.. automodule:: probreg.gaussian_filtering
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+probreg.gmmtree module
+----------------------
+
+.. automodule:: probreg.gmmtree
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+probreg.l2dist\_regs module
+---------------------------
+
+.. automodule:: probreg.l2dist_regs
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+probreg.math\_utils module
+--------------------------
+
+.. automodule:: probreg.math_utils
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+probreg.se3\_op module
+----------------------
+
+.. automodule:: probreg.se3_op
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+probreg.transformation module
+-----------------------------
+
+.. automodule:: probreg.transformation
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: probreg
+    :members:
+    :undoc-members:
+    :show-inheritance:

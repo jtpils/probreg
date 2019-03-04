@@ -1,0 +1,847 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>probreg package &#8212; probreg  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="probreg-package">
+<h1>probreg package<a class="headerlink" href="#probreg-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-probreg.callbacks">
+<span id="probreg-callbacks-module"></span><h2>probreg.callbacks module<a class="headerlink" href="#module-probreg.callbacks" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="probreg.callbacks.Plot2DCallback">
+<em class="property">class </em><code class="descclassname">probreg.callbacks.</code><code class="descname">Plot2DCallback</code><span class="sig-paren">(</span><em>source</em>, <em>target</em>, <em>save=False</em>, <em>keep_window=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/callbacks.html#Plot2DCallback"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.callbacks.Plot2DCallback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Display the 2D registration result of each iteration.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>source</strong> (<em>numpy.ndarray</em>) – Source point cloud data.</li>
+<li><strong>target</strong> (<em>numpy.ndarray</em>) – Target point cloud data.</li>
+<li><strong>save</strong> (<em>bool</em><em>, </em><em>optional</em>) – If this flag is True,
+each iteration image is saved in a sequential number.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="probreg.callbacks.Open3dVisualizerCallback">
+<em class="property">class </em><code class="descclassname">probreg.callbacks.</code><code class="descname">Open3dVisualizerCallback</code><span class="sig-paren">(</span><em>source</em>, <em>target</em>, <em>save=False</em>, <em>keep_window=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/callbacks.html#Open3dVisualizerCallback"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.callbacks.Open3dVisualizerCallback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Display the 3D registration result of each iteration.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>source</strong> (<em>numpy.ndarray</em>) – Source point cloud data.</li>
+<li><strong>target</strong> (<em>numpy.ndarray</em>) – Target point cloud data.</li>
+<li><strong>save</strong> (<em>bool</em><em>, </em><em>optional</em>) – If this flag is True,
+each iteration image is saved in a sequential number.</li>
+<li><strong>keep_window</strong> (<em>bool</em><em>, </em><em>optional</em>) – If this flag is True,
+the drawing window blocks after registration is finished.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-probreg.cost_functions">
+<span id="probreg-cost-functions-module"></span><h2>probreg.cost_functions module<a class="headerlink" href="#module-probreg.cost_functions" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="probreg.cost_functions.CostFunction">
+<em class="property">class </em><code class="descclassname">probreg.cost_functions.</code><code class="descname">CostFunction</code><span class="sig-paren">(</span><em>tf_type</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/cost_functions.html#CostFunction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.cost_functions.CostFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="probreg.cost_functions.CostFunction.to_transformation">
+<code class="descname">to_transformation</code><span class="sig-paren">(</span><em>theta</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/cost_functions.html#CostFunction.to_transformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.cost_functions.CostFunction.to_transformation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="probreg.cost_functions.CostFunction.initial">
+<code class="descname">initial</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/cost_functions.html#CostFunction.initial"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.cost_functions.CostFunction.initial" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="probreg.cost_functions.compute_l2_dist">
+<code class="descclassname">probreg.cost_functions.</code><code class="descname">compute_l2_dist</code><span class="sig-paren">(</span><em>mu_source</em>, <em>phi_source</em>, <em>mu_target</em>, <em>phi_target</em>, <em>sigma</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/cost_functions.html#compute_l2_dist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.cost_functions.compute_l2_dist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="probreg.cost_functions.RigidCostFunction">
+<em class="property">class </em><code class="descclassname">probreg.cost_functions.</code><code class="descname">RigidCostFunction</code><a class="reference internal" href="_modules/probreg/cost_functions.html#RigidCostFunction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.cost_functions.RigidCostFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#probreg.cost_functions.CostFunction" title="probreg.cost_functions.CostFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">probreg.cost_functions.CostFunction</span></code></a></p>
+<dl class="method">
+<dt id="probreg.cost_functions.RigidCostFunction.to_transformation">
+<code class="descname">to_transformation</code><span class="sig-paren">(</span><em>theta</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/cost_functions.html#RigidCostFunction.to_transformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.cost_functions.RigidCostFunction.to_transformation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="probreg.cost_functions.RigidCostFunction.initial">
+<code class="descname">initial</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/cost_functions.html#RigidCostFunction.initial"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.cost_functions.RigidCostFunction.initial" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="probreg.cost_functions.TPSCostFunction">
+<em class="property">class </em><code class="descclassname">probreg.cost_functions.</code><code class="descname">TPSCostFunction</code><span class="sig-paren">(</span><em>control_pts</em>, <em>alpha=1.0</em>, <em>beta=0.1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/cost_functions.html#TPSCostFunction"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.cost_functions.TPSCostFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#probreg.cost_functions.CostFunction" title="probreg.cost_functions.CostFunction"><code class="xref py py-class docutils literal notranslate"><span class="pre">probreg.cost_functions.CostFunction</span></code></a></p>
+<dl class="method">
+<dt id="probreg.cost_functions.TPSCostFunction.to_transformation">
+<code class="descname">to_transformation</code><span class="sig-paren">(</span><em>theta</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/cost_functions.html#TPSCostFunction.to_transformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.cost_functions.TPSCostFunction.to_transformation" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="probreg.cost_functions.TPSCostFunction.initial">
+<code class="descname">initial</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/cost_functions.html#TPSCostFunction.initial"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.cost_functions.TPSCostFunction.initial" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-probreg.cpd">
+<span id="probreg-cpd-module"></span><h2>probreg.cpd module<a class="headerlink" href="#module-probreg.cpd" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="probreg.cpd.EstepResult">
+<em class="property">class </em><code class="descclassname">probreg.cpd.</code><code class="descname">EstepResult</code><span class="sig-paren">(</span><em>pt1</em>, <em>p1</em>, <em>px</em>, <em>n_p</em><span class="sig-paren">)</span><a class="headerlink" href="#probreg.cpd.EstepResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="attribute">
+<dt id="probreg.cpd.EstepResult.n_p">
+<code class="descname">n_p</code><a class="headerlink" href="#probreg.cpd.EstepResult.n_p" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="probreg.cpd.EstepResult.p1">
+<code class="descname">p1</code><a class="headerlink" href="#probreg.cpd.EstepResult.p1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="probreg.cpd.EstepResult.pt1">
+<code class="descname">pt1</code><a class="headerlink" href="#probreg.cpd.EstepResult.pt1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="probreg.cpd.EstepResult.px">
+<code class="descname">px</code><a class="headerlink" href="#probreg.cpd.EstepResult.px" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="probreg.cpd.MstepResult">
+<em class="property">class </em><code class="descclassname">probreg.cpd.</code><code class="descname">MstepResult</code><span class="sig-paren">(</span><em>transformation</em>, <em>sigma2</em>, <em>q</em><span class="sig-paren">)</span><a class="headerlink" href="#probreg.cpd.MstepResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="attribute">
+<dt id="probreg.cpd.MstepResult.q">
+<code class="descname">q</code><a class="headerlink" href="#probreg.cpd.MstepResult.q" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="probreg.cpd.MstepResult.sigma2">
+<code class="descname">sigma2</code><a class="headerlink" href="#probreg.cpd.MstepResult.sigma2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="probreg.cpd.MstepResult.transformation">
+<code class="descname">transformation</code><a class="headerlink" href="#probreg.cpd.MstepResult.transformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="probreg.cpd.CoherentPointDrift">
+<em class="property">class </em><code class="descclassname">probreg.cpd.</code><code class="descname">CoherentPointDrift</code><span class="sig-paren">(</span><em>source=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/cpd.html#CoherentPointDrift"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.cpd.CoherentPointDrift" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Coherent Point Drigt algorithm.
+This is an abstract class.
+Based on this class, it is inherited by rigid, affine, nonrigid classes
+according to the type of transformation.
+In this class, Estimation step in EM algorithm is implemented and
+Maximazation step is implemented in the inherited classes.</p>
+<dl class="method">
+<dt id="probreg.cpd.CoherentPointDrift.set_source">
+<code class="descname">set_source</code><span class="sig-paren">(</span><em>source</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/cpd.html#CoherentPointDrift.set_source"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.cpd.CoherentPointDrift.set_source" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="probreg.cpd.CoherentPointDrift.set_callbacks">
+<code class="descname">set_callbacks</code><span class="sig-paren">(</span><em>callbacks</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/cpd.html#CoherentPointDrift.set_callbacks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.cpd.CoherentPointDrift.set_callbacks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="probreg.cpd.CoherentPointDrift.expectation_step">
+<code class="descname">expectation_step</code><span class="sig-paren">(</span><em>t_source</em>, <em>target</em>, <em>sigma2</em>, <em>w=0.0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/cpd.html#CoherentPointDrift.expectation_step"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.cpd.CoherentPointDrift.expectation_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Expectation step for CPD</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="probreg.cpd.CoherentPointDrift.maximization_step">
+<code class="descname">maximization_step</code><span class="sig-paren">(</span><em>target</em>, <em>estep_res</em>, <em>sigma2_p=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/cpd.html#CoherentPointDrift.maximization_step"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.cpd.CoherentPointDrift.maximization_step" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="probreg.cpd.CoherentPointDrift.registration">
+<code class="descname">registration</code><span class="sig-paren">(</span><em>target</em>, <em>w=0.0</em>, <em>maxiter=50</em>, <em>tol=0.001</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/cpd.html#CoherentPointDrift.registration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.cpd.CoherentPointDrift.registration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="probreg.cpd.RigidCPD">
+<em class="property">class </em><code class="descclassname">probreg.cpd.</code><code class="descname">RigidCPD</code><span class="sig-paren">(</span><em>source=None</em>, <em>update_scale=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/cpd.html#RigidCPD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.cpd.RigidCPD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#probreg.cpd.CoherentPointDrift" title="probreg.cpd.CoherentPointDrift"><code class="xref py py-class docutils literal notranslate"><span class="pre">probreg.cpd.CoherentPointDrift</span></code></a></p>
+<dl class="method">
+<dt id="probreg.cpd.RigidCPD.maximization_step">
+<code class="descname">maximization_step</code><span class="sig-paren">(</span><em>target</em>, <em>estep_res</em>, <em>sigma2_p=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/cpd.html#RigidCPD.maximization_step"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.cpd.RigidCPD.maximization_step" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="probreg.cpd.AffineCPD">
+<em class="property">class </em><code class="descclassname">probreg.cpd.</code><code class="descname">AffineCPD</code><span class="sig-paren">(</span><em>source=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/cpd.html#AffineCPD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.cpd.AffineCPD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#probreg.cpd.CoherentPointDrift" title="probreg.cpd.CoherentPointDrift"><code class="xref py py-class docutils literal notranslate"><span class="pre">probreg.cpd.CoherentPointDrift</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="probreg.cpd.NonRigidCPD">
+<em class="property">class </em><code class="descclassname">probreg.cpd.</code><code class="descname">NonRigidCPD</code><span class="sig-paren">(</span><em>source=None</em>, <em>beta=2.0</em>, <em>lmd=2.0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/cpd.html#NonRigidCPD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.cpd.NonRigidCPD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#probreg.cpd.CoherentPointDrift" title="probreg.cpd.CoherentPointDrift"><code class="xref py py-class docutils literal notranslate"><span class="pre">probreg.cpd.CoherentPointDrift</span></code></a></p>
+<dl class="method">
+<dt id="probreg.cpd.NonRigidCPD.set_source">
+<code class="descname">set_source</code><span class="sig-paren">(</span><em>source</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/cpd.html#NonRigidCPD.set_source"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.cpd.NonRigidCPD.set_source" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="probreg.cpd.NonRigidCPD.maximization_step">
+<code class="descname">maximization_step</code><span class="sig-paren">(</span><em>target</em>, <em>estep_res</em>, <em>sigma2_p=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/cpd.html#NonRigidCPD.maximization_step"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.cpd.NonRigidCPD.maximization_step" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="probreg.cpd.registration_cpd">
+<code class="descclassname">probreg.cpd.</code><code class="descname">registration_cpd</code><span class="sig-paren">(</span><em>source</em>, <em>target</em>, <em>tf_type_name='rigid'</em>, <em>w=0.0</em>, <em>maxiter=50</em>, <em>tol=0.001</em>, <em>callbacks=[]</em>, <em>**kargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/cpd.html#registration_cpd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.cpd.registration_cpd" title="Permalink to this definition">¶</a></dt>
+<dd><p>CPD Registraion</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-probreg.features">
+<span id="probreg-features-module"></span><h2>probreg.features module<a class="headerlink" href="#module-probreg.features" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="probreg.features.Feature">
+<em class="property">class </em><code class="descclassname">probreg.features.</code><code class="descname">Feature</code><a class="reference internal" href="_modules/probreg/features.html#Feature"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.features.Feature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="probreg.features.Feature.init">
+<code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/features.html#Feature.init"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.features.Feature.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="probreg.features.Feature.compute">
+<code class="descname">compute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/features.html#Feature.compute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.features.Feature.compute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="probreg.features.Feature.annealing">
+<code class="descname">annealing</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/features.html#Feature.annealing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.features.Feature.annealing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="probreg.features.GMM">
+<em class="property">class </em><code class="descclassname">probreg.features.</code><code class="descname">GMM</code><span class="sig-paren">(</span><em>n_gmm_components=800</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/features.html#GMM"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.features.GMM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#probreg.features.Feature" title="probreg.features.Feature"><code class="xref py py-class docutils literal notranslate"><span class="pre">probreg.features.Feature</span></code></a></p>
+<p>Feature points extraction using Gaussian mixture model</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>n_gmm_components</strong> (<em>int</em>) – The number of mixture components.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="probreg.features.GMM.init">
+<code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/features.html#GMM.init"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.features.GMM.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="probreg.features.GMM.compute">
+<code class="descname">compute</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/features.html#GMM.compute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.features.GMM.compute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="probreg.features.OneClassSVM">
+<em class="property">class </em><code class="descclassname">probreg.features.</code><code class="descname">OneClassSVM</code><span class="sig-paren">(</span><em>ndim</em>, <em>sigma</em>, <em>gamma=0.5</em>, <em>nu=0.05</em>, <em>delta=10.0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/features.html#OneClassSVM"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.features.OneClassSVM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#probreg.features.Feature" title="probreg.features.Feature"><code class="xref py py-class docutils literal notranslate"><span class="pre">probreg.features.Feature</span></code></a></p>
+<p>Feature points extraction using One class SVM</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ndim</strong> (<em>int</em>) – The dimension of samples.</li>
+<li><strong>sigma</strong> (<em>float</em>) – Veriance of the gaussian distribution made from parameters of SVM.</li>
+<li><strong>gamma</strong> (<em>float</em><em>, </em><em>optional</em>) – Coefficient for RBF kernel.</li>
+<li><strong>nu</strong> (<em>float</em><em>, </em><em>optional</em>) – An upper bound on the fraction of training errors
+and a lower bound of the fraction of support vectors.</li>
+<li><strong>delta</strong> (<em>float</em><em>, </em><em>optional</em>) – Anealing parameter for optimization.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="probreg.features.OneClassSVM.init">
+<code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/features.html#OneClassSVM.init"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.features.OneClassSVM.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="probreg.features.OneClassSVM.compute">
+<code class="descname">compute</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/features.html#OneClassSVM.compute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.features.OneClassSVM.compute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="probreg.features.OneClassSVM.annealing">
+<code class="descname">annealing</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/features.html#OneClassSVM.annealing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.features.OneClassSVM.annealing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-probreg.filterreg">
+<span id="probreg-filterreg-module"></span><h2>probreg.filterreg module<a class="headerlink" href="#module-probreg.filterreg" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="probreg.filterreg.EstepResult">
+<em class="property">class </em><code class="descclassname">probreg.filterreg.</code><code class="descname">EstepResult</code><span class="sig-paren">(</span><em>m0</em>, <em>m1</em>, <em>m2</em>, <em>nx</em><span class="sig-paren">)</span><a class="headerlink" href="#probreg.filterreg.EstepResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="attribute">
+<dt id="probreg.filterreg.EstepResult.m0">
+<code class="descname">m0</code><a class="headerlink" href="#probreg.filterreg.EstepResult.m0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="probreg.filterreg.EstepResult.m1">
+<code class="descname">m1</code><a class="headerlink" href="#probreg.filterreg.EstepResult.m1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="probreg.filterreg.EstepResult.m2">
+<code class="descname">m2</code><a class="headerlink" href="#probreg.filterreg.EstepResult.m2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="probreg.filterreg.EstepResult.nx">
+<code class="descname">nx</code><a class="headerlink" href="#probreg.filterreg.EstepResult.nx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 3</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="probreg.filterreg.MstepResult">
+<em class="property">class </em><code class="descclassname">probreg.filterreg.</code><code class="descname">MstepResult</code><span class="sig-paren">(</span><em>transformation</em>, <em>sigma2</em>, <em>q</em><span class="sig-paren">)</span><a class="headerlink" href="#probreg.filterreg.MstepResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="attribute">
+<dt id="probreg.filterreg.MstepResult.q">
+<code class="descname">q</code><a class="headerlink" href="#probreg.filterreg.MstepResult.q" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 2</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="probreg.filterreg.MstepResult.sigma2">
+<code class="descname">sigma2</code><a class="headerlink" href="#probreg.filterreg.MstepResult.sigma2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="probreg.filterreg.MstepResult.transformation">
+<code class="descname">transformation</code><a class="headerlink" href="#probreg.filterreg.MstepResult.transformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="probreg.filterreg.FilterReg">
+<em class="property">class </em><code class="descclassname">probreg.filterreg.</code><code class="descname">FilterReg</code><span class="sig-paren">(</span><em>source=None</em>, <em>target_normals=None</em>, <em>sigma2=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/filterreg.html#FilterReg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.filterreg.FilterReg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>FilterReg is similar to CPD, and the speed performance is improved.
+In this algorithm, not only point-to-point alignment but also
+point-to-plane alignment are implemented.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>source</strong> (<em>numpy.ndarray</em><em>, </em><em>optional</em>) – Source point cloud data.</li>
+<li><strong>target_normals</strong> (<em>numpy.ndarray</em><em>, </em><em>optional</em>) – Normals of target points.</li>
+<li><strong>sigma2</strong> (<em>Float</em><em>, </em><em>optional</em>) – Variance parameter. If this variable is None,
+the variance is updated in Mstep.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="probreg.filterreg.FilterReg.set_source">
+<code class="descname">set_source</code><span class="sig-paren">(</span><em>source</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/filterreg.html#FilterReg.set_source"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.filterreg.FilterReg.set_source" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="probreg.filterreg.FilterReg.set_target_normals">
+<code class="descname">set_target_normals</code><span class="sig-paren">(</span><em>target_normals</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/filterreg.html#FilterReg.set_target_normals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.filterreg.FilterReg.set_target_normals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="probreg.filterreg.FilterReg.set_callbacks">
+<code class="descname">set_callbacks</code><span class="sig-paren">(</span><em>callbacks</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/filterreg.html#FilterReg.set_callbacks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.filterreg.FilterReg.set_callbacks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="probreg.filterreg.FilterReg.expectation_step">
+<code class="descname">expectation_step</code><span class="sig-paren">(</span><em>t_source</em>, <em>target</em>, <em>sigma2</em>, <em>objective_type='pt2pt'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/filterreg.html#FilterReg.expectation_step"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.filterreg.FilterReg.expectation_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Expectation step</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="probreg.filterreg.FilterReg.maximization_step">
+<code class="descname">maximization_step</code><span class="sig-paren">(</span><em>t_source</em>, <em>target</em>, <em>estep_res</em>, <em>w=0.0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/filterreg.html#FilterReg.maximization_step"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.filterreg.FilterReg.maximization_step" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="probreg.filterreg.FilterReg.registration">
+<code class="descname">registration</code><span class="sig-paren">(</span><em>target</em>, <em>w=0.0</em>, <em>maxiter=50</em>, <em>tol=0.001</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/filterreg.html#FilterReg.registration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.filterreg.FilterReg.registration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="probreg.filterreg.RigidFilterReg">
+<em class="property">class </em><code class="descclassname">probreg.filterreg.</code><code class="descname">RigidFilterReg</code><span class="sig-paren">(</span><em>source=None</em>, <em>target_normals=None</em>, <em>sigma2=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/filterreg.html#RigidFilterReg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.filterreg.RigidFilterReg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#probreg.filterreg.FilterReg" title="probreg.filterreg.FilterReg"><code class="xref py py-class docutils literal notranslate"><span class="pre">probreg.filterreg.FilterReg</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="probreg.filterreg.registration_filterreg">
+<code class="descclassname">probreg.filterreg.</code><code class="descname">registration_filterreg</code><span class="sig-paren">(</span><em>source</em>, <em>target</em>, <em>target_normals=None</em>, <em>sigma2=None</em>, <em>callbacks=[]</em>, <em>**kargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/filterreg.html#registration_filterreg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.filterreg.registration_filterreg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-probreg.gauss_transform">
+<span id="probreg-gauss-transform-module"></span><h2>probreg.gauss_transform module<a class="headerlink" href="#module-probreg.gauss_transform" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="probreg.gauss_transform.Direct">
+<em class="property">class </em><code class="descclassname">probreg.gauss_transform.</code><code class="descname">Direct</code><span class="sig-paren">(</span><em>source</em>, <em>h</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/gauss_transform.html#Direct"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.gauss_transform.Direct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="probreg.gauss_transform.Direct.compute">
+<code class="descname">compute</code><span class="sig-paren">(</span><em>target</em>, <em>weights</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/gauss_transform.html#Direct.compute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.gauss_transform.Direct.compute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="probreg.gauss_transform.GaussTransform">
+<em class="property">class </em><code class="descclassname">probreg.gauss_transform.</code><code class="descname">GaussTransform</code><span class="sig-paren">(</span><em>source</em>, <em>h</em>, <em>eps=0.0001</em>, <em>sw_h=0.3</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/gauss_transform.html#GaussTransform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.gauss_transform.GaussTransform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="probreg.gauss_transform.GaussTransform.compute">
+<code class="descname">compute</code><span class="sig-paren">(</span><em>target</em>, <em>weights=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/gauss_transform.html#GaussTransform.compute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.gauss_transform.GaussTransform.compute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-probreg.gaussian_filtering">
+<span id="probreg-gaussian-filtering-module"></span><h2>probreg.gaussian_filtering module<a class="headerlink" href="#module-probreg.gaussian_filtering" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="probreg.gaussian_filtering.filter">
+<code class="descclassname">probreg.gaussian_filtering.</code><code class="descname">filter</code><span class="sig-paren">(</span><em>p</em>, <em>v</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/gaussian_filtering.html#filter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.gaussian_filtering.filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Permutohedral lattice filter</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-probreg.gmmtree">
+<span id="probreg-gmmtree-module"></span><h2>probreg.gmmtree module<a class="headerlink" href="#module-probreg.gmmtree" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="probreg.gmmtree.EstepResult">
+<em class="property">class </em><code class="descclassname">probreg.gmmtree.</code><code class="descname">EstepResult</code><span class="sig-paren">(</span><em>moments</em><span class="sig-paren">)</span><a class="headerlink" href="#probreg.gmmtree.EstepResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="attribute">
+<dt id="probreg.gmmtree.EstepResult.moments">
+<code class="descname">moments</code><a class="headerlink" href="#probreg.gmmtree.EstepResult.moments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="probreg.gmmtree.MstepResult">
+<em class="property">class </em><code class="descclassname">probreg.gmmtree.</code><code class="descname">MstepResult</code><span class="sig-paren">(</span><em>transformation</em>, <em>q</em><span class="sig-paren">)</span><a class="headerlink" href="#probreg.gmmtree.MstepResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="attribute">
+<dt id="probreg.gmmtree.MstepResult.q">
+<code class="descname">q</code><a class="headerlink" href="#probreg.gmmtree.MstepResult.q" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="probreg.gmmtree.MstepResult.transformation">
+<code class="descname">transformation</code><a class="headerlink" href="#probreg.gmmtree.MstepResult.transformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="probreg.gmmtree.GMMTree">
+<em class="property">class </em><code class="descclassname">probreg.gmmtree.</code><code class="descname">GMMTree</code><span class="sig-paren">(</span><em>source=None</em>, <em>tree_level=2</em>, <em>lambda_c=0.01</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/gmmtree.html#GMMTree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.gmmtree.GMMTree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>GMM Tree</p>
+<dl class="method">
+<dt id="probreg.gmmtree.GMMTree.set_source">
+<code class="descname">set_source</code><span class="sig-paren">(</span><em>source</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/gmmtree.html#GMMTree.set_source"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.gmmtree.GMMTree.set_source" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="probreg.gmmtree.GMMTree.set_callbacks">
+<code class="descname">set_callbacks</code><span class="sig-paren">(</span><em>callbacks</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/gmmtree.html#GMMTree.set_callbacks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.gmmtree.GMMTree.set_callbacks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="probreg.gmmtree.GMMTree.expectation_step">
+<code class="descname">expectation_step</code><span class="sig-paren">(</span><em>target</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/gmmtree.html#GMMTree.expectation_step"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.gmmtree.GMMTree.expectation_step" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="probreg.gmmtree.GMMTree.maximization_step">
+<code class="descname">maximization_step</code><span class="sig-paren">(</span><em>estep_res</em>, <em>trans_p</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/gmmtree.html#GMMTree.maximization_step"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.gmmtree.GMMTree.maximization_step" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="probreg.gmmtree.GMMTree.registration">
+<code class="descname">registration</code><span class="sig-paren">(</span><em>target</em>, <em>max_itr=20</em>, <em>tol=0.0001</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/gmmtree.html#GMMTree.registration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.gmmtree.GMMTree.registration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="probreg.gmmtree.registration_gmmtree">
+<code class="descclassname">probreg.gmmtree.</code><code class="descname">registration_gmmtree</code><span class="sig-paren">(</span><em>source</em>, <em>target</em>, <em>callbacks=[]</em>, <em>**kargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/gmmtree.html#registration_gmmtree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.gmmtree.registration_gmmtree" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-probreg.l2dist_regs">
+<span id="probreg-l2dist-regs-module"></span><h2>probreg.l2dist_regs module<a class="headerlink" href="#module-probreg.l2dist_regs" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="probreg.l2dist_regs.L2DistRegistration">
+<em class="property">class </em><code class="descclassname">probreg.l2dist_regs.</code><code class="descname">L2DistRegistration</code><span class="sig-paren">(</span><em>source</em>, <em>feature_gen</em>, <em>cost_fn</em>, <em>sigma=1.0</em>, <em>delta=0.9</em>, <em>use_estimated_sigma=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/l2dist_regs.html#L2DistRegistration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.l2dist_regs.L2DistRegistration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>L2 distance registration class
+This algorithm expresses point clouds as mixture gaussian distributions and
+performs registration by minimizing the distance between two distributions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>source</strong> (<em>numpy.ndarray</em>) – Source point cloud data.</li>
+<li><strong>feature_gen</strong> (<a class="reference internal" href="#probreg.features.Feature" title="probreg.features.Feature"><em>probreg.features.Feature</em></a>) – Generator of mixture gaussian distribution.</li>
+<li><strong>cost_fn</strong> (<a class="reference internal" href="#probreg.cost_functions.CostFunction" title="probreg.cost_functions.CostFunction"><em>probreg.cost_functions.CostFunction</em></a>) – Cost function to caliculate L2 distance.</li>
+<li><strong>sigma</strong> (<em>float</em><em>, </em><em>optional</em>) – Scaling parameter for L2 distance.</li>
+<li><strong>delta</strong> (<em>float</em><em>, </em><em>optional</em>) – Annealing parameter for optimization.</li>
+<li><strong>use_estimated_sigma</strong> (<em>float</em><em>, </em><em>optional</em>) – If this flag is True,
+sigma estimates from the source point cloud.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="probreg.l2dist_regs.L2DistRegistration.set_source">
+<code class="descname">set_source</code><span class="sig-paren">(</span><em>source</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/l2dist_regs.html#L2DistRegistration.set_source"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.l2dist_regs.L2DistRegistration.set_source" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="probreg.l2dist_regs.L2DistRegistration.set_callbacks">
+<code class="descname">set_callbacks</code><span class="sig-paren">(</span><em>callbacks</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/l2dist_regs.html#L2DistRegistration.set_callbacks"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.l2dist_regs.L2DistRegistration.set_callbacks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="probreg.l2dist_regs.L2DistRegistration.optimization_cb">
+<code class="descname">optimization_cb</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/l2dist_regs.html#L2DistRegistration.optimization_cb"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.l2dist_regs.L2DistRegistration.optimization_cb" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="probreg.l2dist_regs.L2DistRegistration.registration">
+<code class="descname">registration</code><span class="sig-paren">(</span><em>target</em>, <em>max_itr=1</em>, <em>tol=0.001</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/l2dist_regs.html#L2DistRegistration.registration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.l2dist_regs.L2DistRegistration.registration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="probreg.l2dist_regs.RigidGMMReg">
+<em class="property">class </em><code class="descclassname">probreg.l2dist_regs.</code><code class="descname">RigidGMMReg</code><span class="sig-paren">(</span><em>source</em>, <em>sigma=1.0</em>, <em>delta=0.9</em>, <em>n_gmm_components=800</em>, <em>use_estimated_sigma=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/l2dist_regs.html#RigidGMMReg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.l2dist_regs.RigidGMMReg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#probreg.l2dist_regs.L2DistRegistration" title="probreg.l2dist_regs.L2DistRegistration"><code class="xref py py-class docutils literal notranslate"><span class="pre">probreg.l2dist_regs.L2DistRegistration</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="probreg.l2dist_regs.TPSGMMReg">
+<em class="property">class </em><code class="descclassname">probreg.l2dist_regs.</code><code class="descname">TPSGMMReg</code><span class="sig-paren">(</span><em>source</em>, <em>sigma=1.0</em>, <em>delta=0.9</em>, <em>n_gmm_components=800</em>, <em>alpha=1.0</em>, <em>beta=0.1</em>, <em>use_estimated_sigma=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/l2dist_regs.html#TPSGMMReg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.l2dist_regs.TPSGMMReg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#probreg.l2dist_regs.L2DistRegistration" title="probreg.l2dist_regs.L2DistRegistration"><code class="xref py py-class docutils literal notranslate"><span class="pre">probreg.l2dist_regs.L2DistRegistration</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="probreg.l2dist_regs.RigidSVR">
+<em class="property">class </em><code class="descclassname">probreg.l2dist_regs.</code><code class="descname">RigidSVR</code><span class="sig-paren">(</span><em>source</em>, <em>sigma=1.0</em>, <em>delta=0.9</em>, <em>gamma=0.5</em>, <em>nu=0.1</em>, <em>use_estimated_sigma=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/l2dist_regs.html#RigidSVR"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.l2dist_regs.RigidSVR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#probreg.l2dist_regs.L2DistRegistration" title="probreg.l2dist_regs.L2DistRegistration"><code class="xref py py-class docutils literal notranslate"><span class="pre">probreg.l2dist_regs.L2DistRegistration</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="probreg.l2dist_regs.TPSSVR">
+<em class="property">class </em><code class="descclassname">probreg.l2dist_regs.</code><code class="descname">TPSSVR</code><span class="sig-paren">(</span><em>source</em>, <em>sigma=1.0</em>, <em>delta=0.9</em>, <em>gamma=0.5</em>, <em>nu=0.1</em>, <em>alpha=1.0</em>, <em>beta=0.1</em>, <em>use_estimated_sigma=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/l2dist_regs.html#TPSSVR"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.l2dist_regs.TPSSVR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#probreg.l2dist_regs.L2DistRegistration" title="probreg.l2dist_regs.L2DistRegistration"><code class="xref py py-class docutils literal notranslate"><span class="pre">probreg.l2dist_regs.L2DistRegistration</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="probreg.l2dist_regs.registration_gmmreg">
+<code class="descclassname">probreg.l2dist_regs.</code><code class="descname">registration_gmmreg</code><span class="sig-paren">(</span><em>source</em>, <em>target</em>, <em>tf_type_name='rigid'</em>, <em>callbacks=[]</em>, <em>**kargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/l2dist_regs.html#registration_gmmreg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.l2dist_regs.registration_gmmreg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="probreg.l2dist_regs.registration_svr">
+<code class="descclassname">probreg.l2dist_regs.</code><code class="descname">registration_svr</code><span class="sig-paren">(</span><em>source</em>, <em>target</em>, <em>tf_type_name='rigid'</em>, <em>callbacks=[]</em>, <em>**kargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/l2dist_regs.html#registration_svr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.l2dist_regs.registration_svr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-probreg.math_utils">
+<span id="probreg-math-utils-module"></span><h2>probreg.math_utils module<a class="headerlink" href="#module-probreg.math_utils" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="probreg.math_utils.Normalizer">
+<em class="property">class </em><code class="descclassname">probreg.math_utils.</code><code class="descname">Normalizer</code><span class="sig-paren">(</span><em>scale=1.0</em>, <em>centroid=0.0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/math_utils.html#Normalizer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.math_utils.Normalizer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="probreg.math_utils.Normalizer.normalize">
+<code class="descname">normalize</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/math_utils.html#Normalizer.normalize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.math_utils.Normalizer.normalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="probreg.math_utils.Normalizer.denormalize">
+<code class="descname">denormalize</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/math_utils.html#Normalizer.denormalize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.math_utils.Normalizer.denormalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="probreg.math_utils.squared_kernel_sum">
+<code class="descclassname">probreg.math_utils.</code><code class="descname">squared_kernel_sum</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/math_utils.html#squared_kernel_sum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.math_utils.squared_kernel_sum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="probreg.math_utils.rbf_kernel">
+<code class="descclassname">probreg.math_utils.</code><code class="descname">rbf_kernel</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>beta</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/math_utils.html#rbf_kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.math_utils.rbf_kernel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="probreg.math_utils.tps_kernel">
+<code class="descclassname">probreg.math_utils.</code><code class="descname">tps_kernel</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/math_utils.html#tps_kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.math_utils.tps_kernel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-probreg.se3_op">
+<span id="probreg-se3-op-module"></span><h2>probreg.se3_op module<a class="headerlink" href="#module-probreg.se3_op" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="probreg.se3_op.skew">
+<code class="descclassname">probreg.se3_op.</code><code class="descname">skew</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/se3_op.html#skew"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.se3_op.skew" title="Permalink to this definition">¶</a></dt>
+<dd><p>skew-symmetric matrix, that represent
+cross products as matrix multiplications.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="probreg.se3_op.twist_trans">
+<code class="descclassname">probreg.se3_op.</code><code class="descname">twist_trans</code><span class="sig-paren">(</span><em>tw</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/se3_op.html#twist_trans"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.se3_op.twist_trans" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="probreg.se3_op.twist_mul">
+<code class="descclassname">probreg.se3_op.</code><code class="descname">twist_mul</code><span class="sig-paren">(</span><em>tw</em>, <em>rot</em>, <em>t</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/se3_op.html#twist_mul"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.se3_op.twist_mul" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="probreg.se3_op.diff_rot_from_quaternion">
+<code class="descclassname">probreg.se3_op.</code><code class="descname">diff_rot_from_quaternion</code><span class="sig-paren">(</span><em>q</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/se3_op.html#diff_rot_from_quaternion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.se3_op.diff_rot_from_quaternion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-probreg.transformation">
+<span id="probreg-transformation-module"></span><h2>probreg.transformation module<a class="headerlink" href="#module-probreg.transformation" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="probreg.transformation.Transformation">
+<em class="property">class </em><code class="descclassname">probreg.transformation.</code><code class="descname">Transformation</code><a class="reference internal" href="_modules/probreg/transformation.html#Transformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.transformation.Transformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="probreg.transformation.Transformation.transform">
+<code class="descname">transform</code><span class="sig-paren">(</span><em>points</em>, <em>array_type=&lt;class 'open3d.open3d.Vector3dVector'&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/transformation.html#Transformation.transform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.transformation.Transformation.transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="probreg.transformation.RigidTransformation">
+<em class="property">class </em><code class="descclassname">probreg.transformation.</code><code class="descname">RigidTransformation</code><span class="sig-paren">(</span><em>rot=array([[1., 0., 0.],        [0., 1., 0.],        [0., 0., 1.]]), t=array([0., 0., 0.]), scale=1.0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/transformation.html#RigidTransformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.transformation.RigidTransformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#probreg.transformation.Transformation" title="probreg.transformation.Transformation"><code class="xref py py-class docutils literal notranslate"><span class="pre">probreg.transformation.Transformation</span></code></a></p>
+<dl class="method">
+<dt id="probreg.transformation.RigidTransformation.inverse">
+<code class="descname">inverse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/transformation.html#RigidTransformation.inverse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.transformation.RigidTransformation.inverse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="probreg.transformation.AffineTransformation">
+<em class="property">class </em><code class="descclassname">probreg.transformation.</code><code class="descname">AffineTransformation</code><span class="sig-paren">(</span><em>b=array([[1., 0., 0.],        [0., 1., 0.],        [0., 0., 1.]]), t=array([0., 0., 0.])</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/transformation.html#AffineTransformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.transformation.AffineTransformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#probreg.transformation.Transformation" title="probreg.transformation.Transformation"><code class="xref py py-class docutils literal notranslate"><span class="pre">probreg.transformation.Transformation</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="probreg.transformation.NonRigidTransformation">
+<em class="property">class </em><code class="descclassname">probreg.transformation.</code><code class="descname">NonRigidTransformation</code><span class="sig-paren">(</span><em>w</em>, <em>points</em>, <em>beta=2.0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/transformation.html#NonRigidTransformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.transformation.NonRigidTransformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#probreg.transformation.Transformation" title="probreg.transformation.Transformation"><code class="xref py py-class docutils literal notranslate"><span class="pre">probreg.transformation.Transformation</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="probreg.transformation.TPSTransformation">
+<em class="property">class </em><code class="descclassname">probreg.transformation.</code><code class="descname">TPSTransformation</code><span class="sig-paren">(</span><em>a</em>, <em>v</em>, <em>control_pts</em>, <em>kernel=&lt;function tps_kernel&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/transformation.html#TPSTransformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.transformation.TPSTransformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#probreg.transformation.Transformation" title="probreg.transformation.Transformation"><code class="xref py py-class docutils literal notranslate"><span class="pre">probreg.transformation.Transformation</span></code></a></p>
+<dl class="method">
+<dt id="probreg.transformation.TPSTransformation.prepare">
+<code class="descname">prepare</code><span class="sig-paren">(</span><em>landmarks</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/transformation.html#TPSTransformation.prepare"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.transformation.TPSTransformation.prepare" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="probreg.transformation.TPSTransformation.transform_basis">
+<code class="descname">transform_basis</code><span class="sig-paren">(</span><em>basis</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/transformation.html#TPSTransformation.transform_basis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.transformation.TPSTransformation.transform_basis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-probreg">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-probreg" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<h1 class="logo"><a href="index.html">probreg</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, neka-nat.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/probreg.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
