@@ -16,6 +16,7 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Probreg: probablistic point cloud registration library" href="index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -206,6 +207,14 @@ Based on this class, it is inherited by rigid, affine, nonrigid classes
 according to the type of transformation.
 In this class, Estimation step in EM algorithm is implemented and
 Maximazation step is implemented in the inherited classes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>source</strong> (<em>numpy.ndarray</em><em>, </em><em>optional</em>) – Source point cloud data.</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="probreg.cpd.CoherentPointDrift.set_source">
 <code class="descname">set_source</code><span class="sig-paren">(</span><em>source</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/cpd.html#CoherentPointDrift.set_source"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.cpd.CoherentPointDrift.set_source" title="Permalink to this definition">¶</a></dt>
@@ -554,6 +563,19 @@ the variance is updated in Mstep.</li>
 <em class="property">class </em><code class="descclassname">probreg.gmmtree.</code><code class="descname">GMMTree</code><span class="sig-paren">(</span><em>source=None</em>, <em>tree_level=2</em>, <em>lambda_c=0.01</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/gmmtree.html#GMMTree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.gmmtree.GMMTree" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>GMM Tree</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>source</strong> (<em>numpy.ndarray</em><em>, </em><em>optional</em>) – Source point cloud data.</li>
+<li><strong>tree_level</strong> (<em>int</em><em>, </em><em>optional</em>) – Maximum depth level of GMM tree.</li>
+<li><strong>lambda_c</strong> (<em>float</em><em>, </em><em>optional</em>) – Parameter that determine the pruning of GMM tree</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="probreg.gmmtree.GMMTree.set_source">
 <code class="descname">set_source</code><span class="sig-paren">(</span><em>source</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/gmmtree.html#GMMTree.set_source"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.gmmtree.GMMTree.set_source" title="Permalink to this definition">¶</a></dt>
@@ -630,7 +652,7 @@ sigma estimates from the source point cloud.</li>
 
 <dl class="method">
 <dt id="probreg.l2dist_regs.L2DistRegistration.registration">
-<code class="descname">registration</code><span class="sig-paren">(</span><em>target</em>, <em>max_itr=1</em>, <em>tol=0.001</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/l2dist_regs.html#L2DistRegistration.registration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.l2dist_regs.L2DistRegistration.registration" title="Permalink to this definition">¶</a></dt>
+<code class="descname">registration</code><span class="sig-paren">(</span><em>target</em>, <em>maxitr=1</em>, <em>tol=0.001</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/l2dist_regs.html#L2DistRegistration.registration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.l2dist_regs.L2DistRegistration.registration" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -711,12 +733,32 @@ sigma estimates from the source point cloud.</li>
 <code class="descclassname">probreg.se3_op.</code><code class="descname">skew</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/se3_op.html#skew"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.se3_op.skew" title="Permalink to this definition">¶</a></dt>
 <dd><p>skew-symmetric matrix, that represent
 cross products as matrix multiplications.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong> (<em>numpy.ndarray</em>) – 3D vector.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">3x3 skew-symmetric matrix.</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="function">
 <dt id="probreg.se3_op.twist_trans">
 <code class="descclassname">probreg.se3_op.</code><code class="descname">twist_trans</code><span class="sig-paren">(</span><em>tw</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/se3_op.html#twist_trans"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.se3_op.twist_trans" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Linear approximation of transformation matrix
+using twist representation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tw</strong> (<em>numpy.ndarray</em>) – Twist vector.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="function">
 <dt id="probreg.se3_op.twist_mul">
@@ -769,6 +811,7 @@ cross products as matrix multiplications.</p>
 <dt id="probreg.transformation.TPSTransformation">
 <em class="property">class </em><code class="descclassname">probreg.transformation.</code><code class="descname">TPSTransformation</code><span class="sig-paren">(</span><em>a</em>, <em>v</em>, <em>control_pts</em>, <em>kernel=&lt;function tps_kernel&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/transformation.html#TPSTransformation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.transformation.TPSTransformation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#probreg.transformation.Transformation" title="probreg.transformation.Transformation"><code class="xref py py-class docutils literal notranslate"><span class="pre">probreg.transformation.Transformation</span></code></a></p>
+<p>Thin Plate Spline transformaion.</p>
 <dl class="method">
 <dt id="probreg.transformation.TPSTransformation.prepare">
 <code class="descname">prepare</code><span class="sig-paren">(</span><em>landmarks</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/probreg/transformation.html#TPSTransformation.prepare"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#probreg.transformation.TPSTransformation.prepare" title="Permalink to this definition">¶</a></dt>
@@ -797,6 +840,7 @@ cross products as matrix multiplications.</p>
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Probreg: probablistic point cloud registration library</a></li>
   </ul></li>
 </ul>
 </div>
@@ -810,6 +854,26 @@ cross products as matrix multiplications.</p>
 
 
 <h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">probreg package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-probreg.callbacks">probreg.callbacks module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-probreg.cost_functions">probreg.cost_functions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-probreg.cpd">probreg.cpd module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-probreg.features">probreg.features module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-probreg.filterreg">probreg.filterreg module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-probreg.gauss_transform">probreg.gauss_transform module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-probreg.gaussian_filtering">probreg.gaussian_filtering module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-probreg.gmmtree">probreg.gmmtree module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-probreg.l2dist_regs">probreg.l2dist_regs module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-probreg.math_utils">probreg.math_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-probreg.se3_op">probreg.se3_op module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-probreg.transformation">probreg.transformation module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-probreg">Module contents</a></li>
+</ul>
+</li>
+</ul>
 
 
 <div id="searchbox" style="display: none" role="search">

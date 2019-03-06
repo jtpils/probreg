@@ -48,6 +48,11 @@
 
 <div class="viewcode-block" id="GMMTree"><a class="viewcode-back" href="../../probreg.html#probreg.gmmtree.GMMTree">[docs]</a><span class="k">class</span> <span class="nc">GMMTree</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;GMM Tree</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        source (numpy.ndarray, optional): Source point cloud data.</span>
+<span class="sd">        tree_level (int, optional): Maximum depth level of GMM tree.</span>
+<span class="sd">        lambda_c (float, optional): Parameter that determine the pruning of GMM tree</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">tree_level</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">lambda_c</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_source</span> <span class="o">=</span> <span class="n">source</span>

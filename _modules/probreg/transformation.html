@@ -35,9 +35,13 @@
   <h1>Source code for probreg.transformation</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">abc</span>
 <span class="kn">import</span> <span class="nn">six</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">open3d</span> <span class="k">as</span> <span class="nn">o3</span>
-<span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">math_utils</span> <span class="k">as</span> <span class="n">mu</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">xxpy</span>
+<span class="n">np</span> <span class="o">=</span> <span class="n">xxpy</span><span class="o">.</span><span class="n">xp_factory</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">xxpy</span><span class="o">.</span><span class="n">use_cuda</span><span class="p">():</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">math_utils_cu</span> <span class="k">as</span> <span class="n">mu</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">math_utils</span> <span class="k">as</span> <span class="n">mu</span>
 
 
 <div class="viewcode-block" id="Transformation"><a class="viewcode-back" href="../../probreg.html#probreg.transformation.Transformation">[docs]</a><span class="nd">@six</span><span class="o">.</span><span class="n">add_metaclass</span><span class="p">(</span><span class="n">abc</span><span class="o">.</span><span class="n">ABCMeta</span><span class="p">)</span>
@@ -71,6 +75,7 @@
         <span class="k">return</span> <span class="n">RigidTransformation</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rot</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rot</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">t</span><span class="p">),</span>
                                    <span class="mf">1.0</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale</span><span class="p">)</span></div></div>
 
+
 <div class="viewcode-block" id="AffineTransformation"><a class="viewcode-back" href="../../probreg.html#probreg.transformation.AffineTransformation">[docs]</a><span class="k">class</span> <span class="nc">AffineTransformation</span><span class="p">(</span><span class="n">Transformation</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span>
                  <span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)):</span>
@@ -93,6 +98,8 @@
 
 
 <div class="viewcode-block" id="TPSTransformation"><a class="viewcode-back" href="../../probreg.html#probreg.transformation.TPSTransformation">[docs]</a><span class="k">class</span> <span class="nc">TPSTransformation</span><span class="p">(</span><span class="n">Transformation</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Thin Plate Spline transformaion.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">control_pts</span><span class="p">,</span>
                  <span class="n">kernel</span><span class="o">=</span><span class="n">mu</span><span class="o">.</span><span class="n">tps_kernel</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">TPSTransformation</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
